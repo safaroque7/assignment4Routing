@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = json_decode(file_get_contents(storage_path('data/projects.json')));
+    $dataAddress = json_decode(file_get_contents(storage_path('data/address.json')));
+    $dataServices = json_decode(file_get_contents(storage_path('data/services.json')));
+    $dataSocialMedia = json_decode(file_get_contents(storage_path('data/socialMedia.json')));
+
+    return view('welcome')->with('data', $data)->with('dataAddress', $dataAddress)->with('dataServices', $dataServices)->with('dataSocialMedia', $dataSocialMedia);
 });
 
 Route::get('/services', function () {
