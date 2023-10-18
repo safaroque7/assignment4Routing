@@ -1,22 +1,27 @@
 [
     {
         "id": 1,
-        "title": "Facebook"
+        "title": "Facebook",
+        "link": "https://www.facebook.com/faroque.computer"
     },
     {
         "id": 2,
-        "title": "Twitter"
+        "title": "Twitter",
+        "link": "https://twitter.com/safaroque"
     },
     {
         "id": 3,
-        "title": "Linkedin"
+        "title": "Linkedin",
+        "link": "https://www.linkedin.com/in/s-a-faroque-6647b917/"
     },
     {
         "id": 4,
-        "title": "YouTube"
+        "title": "YouTube",
+        "link": "https://www.youtube.com/@faroque001"
     },
     {
         "id": 5,
-        "title": "Github"
+        "title": "Github",
+        "link": "https://github.com/safaroque7"
     }
 ]

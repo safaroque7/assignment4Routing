@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Online News Portal"
+        
     },
     {
         "id": 2,
@@ -13,10 +14,22 @@
     },
     {
         "id": 4,
-        "title": "Graphi Design"
+        "title": "Graphic Design"
     },
     {
         "id": 5,
         "title": "Newspaper Design"
+    },
+    {
+        "id": 6,
+        "title": "Domain and Hosting"
+    },
+    {
+        "id": 7,
+        "title": "Video Editing"
+    },
+    {
+        "id": 8,
+        "title": "Spoken English"
     }
 ]

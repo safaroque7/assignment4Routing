@@ -13,7 +13,7 @@
             <div class="flex">
                 <ul class="flex py-24 text-2xl">
                     <li> <a href="{{ url('/') }}"> Home / </a> </li>
-                    <li> Contact </li>
+                    <li> Services </li>
                 </ul>
             </div>
         </div>
@@ -21,8 +21,16 @@
 
 
 
-    {{-- mainBody --}}
-    <div class="container mx-auto mb-5">
-        <h1> Contact </h1>
+    {{-- mainBody     --}}
+    <div class="container mx-auto mb-24">
+        <div class="grid grid-cols-4 gap-4">
+
+            
+                <div>
+                  {{ $filteredPeople=>[1]->title }}
+                </div>
+
+
+        </div>
     </div>
 @endsection

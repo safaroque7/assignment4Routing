@@ -25,32 +25,12 @@
     <div class="container mx-auto mb-24">
         <div class="grid grid-cols-4 gap-4">
 
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Online News Portal </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Official Website </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                ePaper </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Graphic Design </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Newspaper Design </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Video Editing </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Spoken English </div>
-            <div
-                class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-500 hover:text-white transition-all duration-100 cursor-pointer">
-                Book Design </div>
-
-
+            @foreach ($dataServices as $dataService)
+                <div
+                    class="border border-b-4 py-12 flex justify-center align text-3xl hover:bg-gray-900 hover:text-white transition-all duration-500 cursor-pointer">
+                    <a href="/services/{{$dataService->id}}"> {{ $dataService->title }} </a>
+                </div>
+            @endforeach
 
         </div>
     </div>

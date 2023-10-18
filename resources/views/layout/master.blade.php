@@ -14,20 +14,20 @@
         <div class="container mx-auto">
             <div class="flex justify-between py-4">
                 <div class="w-1/3">
-
                     @foreach ($data as $item)
-                        <h1 class="text-4xl text-white hover:underline"> <a href="{{ url('/') }}"> {{ $item->title }} </a> </h1>
+                        <h1 class="text-4xl text-white hover:underline">
+                            <a href="{{ url('/') }}">
+                                {{ $item->title }}
+                            </a>
+                        </h1>
                     @endforeach
                 </div>
 
                 <div class="w-2/3 pt-2">
                     <ul class="flex justify-end">
-                        <li> <a class="menuClasses"
-                                href="{{ url('/') }}"> Home </a> </li>
-                        <li> <a class="menuClasses"
-                                href="{{ url('/services') }}"> Services </a> </li>
-                        <li> <a class="menuClasses"
-                                href="{{ url('/contact') }}"> Contact </a> </li>
+                        <li> <a class="menuClasses" href="{{ url('/') }}"> Home </a> </li>
+                        <li> <a class="menuClasses" href="{{ url('/services') }}"> Services </a> </li>
+                        <li> <a class="menuClasses" href="{{ url('/contact') }}"> Contact </a> </li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +35,6 @@
     </div>
 
     @yield('content')
-
 
     {{-- footer --}}
     <div class="container-full bg-gray-900 py-5 text-white">
@@ -47,16 +46,21 @@
                     <ul>
 
                         @foreach ($dataAddress as $itemAddress)
-                            <li class="flex mb-3"> <span class="stroke-1 mr-2"> <svg xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                        class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            <li class="flex mb-3">
+                                <span class="stroke-1 mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        @foreach ($itemAddress->icons as $icon)
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="{{ $icon }}" />
+                                        @endforeach
+
                                     </svg>
-                                </span> {{ $itemAddress->title }} </li>
+                                </span>
+                                {{ $itemAddress->title }}
+                            </li>
                         @endforeach
+
                     </ul>
                 </div>
 
@@ -72,7 +76,7 @@
                                             d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </span>
-                                <a href="#"> {{ $dataService->title }} </a>
+                                <a href="#" class="hover:underline"> {{ $dataService->title }} </a>
                             </li>
                         @endforeach
 
@@ -92,7 +96,8 @@
                                             d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </span>
-                                <a href="#"> {{ $dataSocialMedium->title }} </a>
+                                <a class="hover:underline" href="{{ $dataSocialMedium->link }}" target="_blank">
+                                    {{ $dataSocialMedium->title }} </a>
                             </li>
                         @endforeach
 
@@ -105,7 +110,6 @@
             </div>
         </div>
     </div>
-
 
 </body>
 
