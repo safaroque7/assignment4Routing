@@ -25,11 +25,11 @@
     <div class="container mx-auto mb-24">
         <div class="grid grid-cols-4 gap-4">
 
-            
+            @foreach ($dataServices as $dataService)
                 <div>
-                  {{ $filteredPeople=>[1]->title }}
+                    {{ $dataService->title }}
                 </div>
-
+            @endforeach
 
         </div>
     </div>

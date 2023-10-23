@@ -41,15 +41,11 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('/services/{id}', function ($id) {
+Route::get('/services/{id}', function () {
     $data = json_decode(file_get_contents(storage_path('data/projects.json')));
     $dataAddress = json_decode(file_get_contents(storage_path('data/address.json')));
     $dataServices = json_decode(file_get_contents(storage_path('data/services.json')));
     $dataSocialMedia = json_decode(file_get_contents(storage_path('data/socialMedia.json')));
-
-    return $filteredPeople = array_filter($dataServices, function ($dataBd) use ($id) {
-        return $dataBd->id == $id;
-    });
-
-    return view('services-single', compact('filteredPeople'));
+    
+    return view('services-single')->with('data', $data)->with('dataAddress', $dataAddress)->with('dataServices', $dataServices)->with('dataSocialMedia', $dataSocialMedia);
 });
