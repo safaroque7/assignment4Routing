@@ -18,8 +18,9 @@ Route::get('/', function () {
     $dataAddress = json_decode(file_get_contents(storage_path('data/address.json')));
     $dataServices = json_decode(file_get_contents(storage_path('data/services.json')));
     $dataSocialMedia = json_decode(file_get_contents(storage_path('data/socialMedia.json')));
+    $mainImage = json_decode(file_get_contents(storage_path('data/homePageImage/main.json')));
 
-    return view('welcome')->with('data', $data)->with('dataAddress', $dataAddress)->with('dataServices', $dataServices)->with('dataSocialMedia', $dataSocialMedia);
+    return view('welcome')->with('data', $data)->with('dataAddress', $dataAddress)->with('dataServices', $dataServices)->with('dataSocialMedia', $dataSocialMedia)->with('mainImage', $mainImage);
 });
 
 Route::get('/services', function () {
